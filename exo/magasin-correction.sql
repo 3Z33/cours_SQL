@@ -50,8 +50,17 @@ CREATE TABLE commande (
     client_id INT(11) NOT NULL,
     date_achat DATETIME NOT NULL,
     reference VARCHAR(255) NOT NULL,
-    prix_total FLOAT NOT NULL 
+    prix_total FLOAT NOT NULL,
+    CONSTRAINT ClientExist FOREIGN KEY (client_id) REFERENCES client (id)
+    ON UPDATE CASCADE
+    ON DELETE CASCADE
 );
+
+ALTER TABLE commande  
+    ADD CONSTRAINT ClientExist FOREIGN KEY (client_id) 
+    REFERENCES client (id)
+    ADD CONSTRAINT ProduitExist FOREIGN KEY (reference)
+    REFERENCES produit (id);
 
 INSERT INTO commande (client_id, date_achat, reference, prix_total) VALUES
 (1, '2023-12-12 10:10:10', '001471', 100),
@@ -73,4 +82,9 @@ CREATE TABLE IF NOT EXISTS produit (
     nom VARCHAR(255) NOT NULL,
     quantite INT(11) NOT NULL,
     prix FLOAT NOT NULL
-)
+);
+
+INSERT INTO produit (nom, quantite, prix) VALUES 
+('Pomme', 10, 50),
+('Casse Noisette', 100, 100),
+('Noisette', 1000, 2);
