@@ -12,12 +12,15 @@
             $_POST['description'],
             "unsolved"
         ));
+<<<<<<< HEAD
 
         $update = $bdd->prepare('UPDATE software SET bug_id=? WHERE id=?')
         $update->execute(array(
 
             $_POST['app_id']
         ))
+=======
+>>>>>>> refs/remotes/origin/main
         header('Location: ../application.php');
     } else {
         echo '<script>alert(\'LOLILOMEGALOL\')</script>';

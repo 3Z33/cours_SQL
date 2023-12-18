@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
     session_start();
     if (empty($_SESSION)) {
@@ -6,6 +7,8 @@
 ?>
 <!DOCTYPE html>
 <html lang="fr">
+=======
+>>>>>>> refs/remotes/origin/main
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../style/style.css">
@@ -13,7 +16,12 @@
 </head>
 <body>
     <form action="../controllers/create_bug.php" method="post">
+<<<<<<< HEAD
         <input type="text" name="app_id" id="app_id" readonly style="display:none;" value="<?php echo $_GET['software'] ?>">    
+=======
+        <input type="text" name="app_id" id="app_id" readonly style="display:none;" value="<?php echo $_GET 
+        ?>">    
+>>>>>>> refs/remotes/origin/main
         <label for="owner">Nom</label>
         <input type="text" name="owner" id="owner">
 
